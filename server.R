@@ -35,9 +35,6 @@ shinyServer(function(input, output) {
   output$tk <- renderTable({
     gettable(input$tablestodis)
   })
-
-  #output$tt <- h5(length(input$tablestodis)
-
   
   datasetInput <- reactive({
     if(is.null(input$xmlfile))
@@ -84,4 +81,3 @@ shinyServer(function(input, output) {
     return(newList)
   })
 })
-
