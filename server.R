@@ -60,6 +60,7 @@ shinyServer(function(input, output) {
     colnames(master.table) <- as.vector(tlist.n)
     for(i in 1:length(rt))({
       jatt = as.data.frame(xmlToDataFrame(xmlChildren(xmltop[[2]][[1]][[2]][[rt[i]]])))
+      names(jatt) = make.names(names(jatt))
       master.table = rbind_list(master.table,jatt,all = TRUE)
       rm(jatt)
     })
